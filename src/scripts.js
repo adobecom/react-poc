@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
 function App(props) {
+  document.body.querySelector('.hello-world').classList.add('unhide');
   return <h1>Hello {props.name || 'world'}</h1>;
 }
 
