@@ -1,8 +1,18 @@
 import { createRoot } from 'react-dom/client';
 
+import { Button, defaultTheme, Provider } from '@adobe/react-spectrum';
+
 function App(props) {
   document.body.querySelector('.hello-world').classList.add('unhide');
-  return <h1>Hello {props.name || 'world'}</h1>;
+  return (
+    <Provider theme={defaultTheme}>
+      <Button
+        variant="accent"
+        onPress={() => alert('Hey there!')}>
+        Hello {props.name}
+      </Button>
+    </Provider>
+  );
 }
 
 const block = document.body.querySelector('.hello-world > div > div');
